@@ -59,7 +59,6 @@ In order to enable geolocation in the background, you need to include the 'NSLoc
 
 IOS >= 15 Positions will also contain a `mocked` boolean to indicate if position was created from a mock provider / software.
 
-
 ### Android
 
 To request access to location, you need to add the following line to your app's `AndroidManifest.xml`:
@@ -205,7 +204,7 @@ Request suitable Location permission.
   )
 ```
 
-On iOS if NSLocationAlwaysUsageDescription is set, it will request Always authorization, although if NSLocationWhenInUseUsageDescription is set, it will request InUse authorization.
+On iOS if NSLocationAlwaysUsageDescription is set, it will request Always authorization, although if NSLocationWhenInUseUsageDescription is set, it will request InUse authorization. In this case, to prevent `requestAuthorization` to silently fail, you need to add location background mode capability or set `authorizationLevel` to 'whenInUse' (see [`setRNConfiguration`](#setrnconfiguration)).
 
 ---
 
